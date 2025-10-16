@@ -1,0 +1,76 @@
+
+/************ MAIN *********************/
+
+/***** FORMULARIO Y TITULO ******/
+    
+.form-admin {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    margin-left: 8rem;
+    font-size: 1rem;
+}
+
+.icono-lupa {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: #ffffff;
+}
+
+
+.icono-agregar {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: -.5rem;
+    border: none;
+    background-color: #ffffff;
+}
+
+.icono-chico {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-color: #ffffff;
+}
+
+.buscar-admin {
+    margin-left: 1rem;
+    width: 35rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tit-lista-admin {
+    margin-left: 8rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/**************** TABLA **********************/
+
+.tabla {
+    font-weight: bold;
+    margin-left: 8rem;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+    width: 80%;
+    overflow-x: auto;
+}
+
+.cabecera {
+    font-size: large;
+    padding-right: 8rem;
+}
+
+.datos {
+    font-size: large;
+    padding-right: 1rem;
+    padding-top:0.5rem;    
+}
+

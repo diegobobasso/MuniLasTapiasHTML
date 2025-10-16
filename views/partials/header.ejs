@@ -1,0 +1,41 @@
+<header>
+            
+    <picture class='funkologo'>
+        <a href='/'>
+            <img class='funkologo' src='/multimedia/branding/logo_light_horizontal.svg' />
+        </a>
+    </picture>
+
+    <nav class='menu'>
+        <ul>
+            <li class='submenu'>
+                <a href='#'>SHOP</a>                        
+                <ul>
+                    <li><a href='/shop'>Funkos</a></li>
+                    <li><a href='#'>Remeras</a></li>
+                    <li><a href='#'>Llaveros</a></li>
+                </ul>
+            </li>
+            <% if (isLogged) { %>
+                <li>
+                    <a href='/admin'>ADMIN</a>
+                </li>
+                <li>
+                    <a href='/auth/logout'>SALIR</a>
+                </li>
+            
+            <% } else { %>    
+                <li>
+                    <a href='/contact'>CONTACTO</a>
+                </li>
+                <li>
+                    <a href='/auth/login'>LOGIN</a>
+                </li>
+            <% } %>
+            <li class='no-hover'>
+                <a href='/shop/cart'><img class='img-cart' src='/multimedia/icons/cart-icon.svg' /></a>
+            </li>
+        </ul>
+    </nav>
+
+</header>

@@ -1,0 +1,82 @@
+    <%-include('./partials/head') %>
+
+    <body>
+
+        <%-include('./partials/header') %>
+
+            <main class='pad-y-2'>         
+                <form class='form-edit text-medio' action='/admin/edit/<%=item.product_id%>' method='post' enctype="multipart/form-data">
+                    <h1 class='text-grande'>EDITAR ITEM</h1>
+                    <input id='product_id' name='product_id' value='<%=item.product_id%>' hidden />
+                    <div class='pad-y-2'>
+                        <label>Categoría: </label>
+                        <select id='category_name' name='category_name' class='select text-medio pad-left-2'>
+                            <option value='<%=item.category_name%>'><%=item.category_name%></option>
+                            <option value='Figuras coleccionables'>Figura</option>
+                        </select>
+                        <label class='pad-left-2'>Licencia: </label>
+                        <select id='licence_name' name='licence_name' class='select text-medio pad-left-2'>
+                            <option value='<%=item.licence_name%>'><%=item.licence_name%></option>
+                            <option value='Harry Potter'>Harry Potter</option>
+                            <option value='Pokemon'>Pokemon</option>
+                            <option value='Star Wars'>Star Wars</option>
+                        </select>
+                    </div>
+                    <div class='pad-buttom-1'>
+                        <label><b>Nombre del producto: </b></label>
+                        <input class='input-form-edit' id='product_name' name='product_name' size='40' type='text' value='<%=item.product_name%>' />
+                    </div>
+                    <div class='pad-buttom-1'>
+                        <textarea class='text-medio' id='product_description' name='product_description' cols='60' rows='5'
+                            placeholder='Descripción del producto'><%=item.product_description%></textarea>
+                    </div>
+                    <div class='pad-y-2'>
+                        <label>SKU: </label><input class='text-medio input-form-edit' id='product_sku' name='product_sku'
+                            placeholder='SSK001AB00001' value='<%=item.product_sku%>' />
+                        <label class='pad-left-2'>Precio: $ </label><input class='text-medio input-form-edit'
+                            id='product_price' name='product_price' size='6' value='<%=item.product_price%>' />
+                        <label class='pad-left-2'>Stock: </label><input class='text-medio input-form-edit' id='dues'
+                            type='text' size='3' value='0' />
+                    </div>
+                    <div class='pad-buttom-1'>
+                        <label>Descuento: % </label><input class='text-medio input-form-edit pad-left-2' id='descuento'
+                             type='text' size='3' placeholder='0' />
+                        <label class='text-medio pad-left-2'>Cuotas: </label>
+                        <select class='text-medio select-cuotas' name='dues' value='<%=item.dues%>'>
+                            <option></option>
+                            <option value='0'>contado efectivo</option>
+                            <option value='3'>3 cuotas sin interés</option>
+                            <option value='6'>6 cuotas sin interés</option>
+                            <option value='9'>9 cuotas sin interés</option>
+                            <option value='12'>12 cuotas sin interés</option>
+                            <option value='15'>15 cuotas sin interés</option>
+                            <option value='18'>18 cuotas sin interés</option>
+                            <option value='24'>24 cuotas sin interés</option>
+                        </select>
+                    </div>
+                    <div class='pad-buttom-1'>
+                        <label>Imágenes: </label>
+                        <input type='file' name='files' multiple> 
+                    </div>
+                    <div class='pad-buttom-1 contenedor-imagenes'>
+                        <img class='imagen-edit izquierda' src='/<%=item.img_front%>' />
+                        <img class='imagen-edit derecha' src='/<%=item.img_back%>' />
+                        <label class='lbl-form izquierda text-center'>Figura</label>
+                        <label class='lbl-form derecha text-center'>Caja</label>
+
+                    </div>
+                    <div class='pad-buttom-1'>
+                        <button class='btn-rojo-edit' type='submit'>Modificar Producto</button>
+                    </div>
+
+                </form>
+
+
+            </main>
+
+
+            <%-include('./partials/footer') %>
+
+    </body>
+
+</html>

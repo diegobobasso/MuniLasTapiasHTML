@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Homero",
+    "lastname": "Simpson",
+    "email": "homero@gmail.com",
+    "password": "$2a$08$eJLdeuEpxBeZC5ampZvmruVTlh0pGPbtzjszxIYtTfQpSIlrrjQJa",
+    "role": "Admin"
+  },
+  {
+    "id": 2,
+    "name": "Bartolomeo",
+    "lastname": "Simpson",
+    "email": "bart@gmail.com",
+    "password": "$2a$08$A7a3M/gQAizXgHpk/TAH3O2BZcg7l1NOfTa6UfWDDHYra6DSE0zjy",
+    "role": "user"
+  }
+]

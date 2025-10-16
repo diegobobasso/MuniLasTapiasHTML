@@ -1,0 +1,60 @@
+<section class='slider contenedor-slider glide'>
+    <h2 class='slider__title'><%=tituloSlider%></h2>
+    <div class='glide__track' data-glide-el='track'>
+        <ul class='slider__items glide__slides'>
+            <%relacionados.forEach(articulo=>{%>
+                <li class='slider__item glide__slide pad-y-2'>
+                    <article>
+                        <a href='/shop/item/<%=articulo.product_id%>' class='marg-top sin-decoracion'>
+                        <div >
+                            <div >
+                                <div class='text-end'>
+                                    <span class='btn-tarj-rojo'>Nuevo</span>
+                                </div>
+                                <img class='ancho-tarj' onmouseout="this.src='/<%=articulo.img_front%>'" onmouseover="this.src='/<%=articulo.img_back%>'"
+                                    src='/<%=articulo.img_front%>' />
+                                <div >
+                                    <p class='text-saga'><%=articulo.licence_name%></p>
+                                    <p class='text-modelo'><%=articulo.product_name%></p>
+                                    <p class='text-precio'><%=articulo.product_price%></p>
+                                    <% if (articulo.dues == 0) { %>
+                                        <p class='text-cuotas'>Contado efectivo</p>
+                                    <% } else { %>
+                                        <p class='text-cuotas'><%=articulo.dues%> cuotas sin interés</p>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    </article>
+                </li>
+            
+            <%}) %>
+        </ul>
+    </div>
+    <div class='glide__arrows' data-glide-el='controls'>
+        <button class='glide__arrow glide__arrow--left' data-glide-dir='<'><iconify-icon icon='tabler:chevron-left'></iconify-icon></button>
+        <button class='glide__arrow glide__arrow--right' data-glide-dir='>'><iconify-icon icon='tabler:chevron-right'></iconify-icon></button>
+    </div>
+</section>
+
+<script src='https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@glidejs/glide'></script>
+<script>
+    new Glide('.glide',
+        {
+            type: 'carousel',
+            startAt: 0,
+            perView: 3,
+            gap: 30,
+            breakpoints: {
+                991: {
+                    perView: 2
+                    },
+                768: {
+                    perView: 1
+                }
+            }
+        }
+    ).mount();
+</script>

@@ -1,0 +1,60 @@
+    <%-include('./partials/head')%>
+
+    <body>
+
+        <%-include('./partials/header') %>
+
+            <main class='main-item'>
+                <div class='izquierda'>
+                    <img onmouseout="this.src='/<%=item.img_front%>'" onmouseover="this.src='/<%=item.img_back%>'"
+                        src='/<%=item.img_front%>' id='miImagen' alt='Imagen' />
+
+                </div>
+ 
+                <form class='derecha formulario' >
+                    <input id='id' value=<%=item.product_id%> hidden />
+                    <p class='text-form-saga'>
+                        <%=item.licence_name%>
+                    </p>
+                    <p class='text-form-nomb'>
+                        <%=item.product_name%>
+                    </p> 
+                    <p class='text-form-desc'>
+                        <%=item.product_description%>
+                    </p>
+                    <p class='text-form-precio'>$ <span>
+                            <%=item.product_price%>
+                        </span></p>
+                    <div class='form-botones'>
+                        <div class='form-botones'>
+                            <input class='form-inp' id='cantidad' name='cantidad' type='text' size='7' value='0' placeholder='0' />
+                            <div>
+                                <button id='suma' class='form-masmenos' type='button'>
+                                    <img src='/multimedia/icons/signo-mas-chico.svg' />
+                                </button>
+                                <button id='resta' class='form-masmenos' type='button'>
+                                    <img src='/multimedia/icons/signo-menos-chico.svg' />
+                                </button>
+                            </div>
+                        </div>
+                        <button class='btn-rojo' onclick='agregarItem()'>Agregar al carrito</button>
+                    </div>
+                    <a href='#'>ver metodos de pago</a>
+                    <span>-</span>
+                    <% if (item.dues == 0) { %>
+                        <span class='text-cuotas'>Contado efectivo</span>
+                    <% } else { %>
+                        <span class='text-cuotas'><%=item.dues%> cuotas sin interés</span>
+                    <% } %>
+                </form>
+            </main>
+
+
+            <%-include('./partials/productslider') %>
+
+            <%-include('./partials/footer') %>
+            
+            <script src='/JS/item.js'></script>
+    </body>
+
+</html>

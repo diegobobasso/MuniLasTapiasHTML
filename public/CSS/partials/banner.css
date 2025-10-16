@@ -1,0 +1,36 @@
+
+.banner {
+    background-image: url('../../multimedia/funkos-banner.webp');
+    background-size: 110%;
+    background-position: center;
+    height: 388px;
+    color: #ffffff;
+  }
+  
+  .text-banner {
+    padding: 8rem;
+  }
+  
+  .text-banner-grande {
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+  
+  .text-banner-centro {
+    font-size: 1.2rem;
+    padding-top: .7rem;
+    padding-bottom: 3rem;
+  }
+  
+  .btn-banner-grande {
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: white;
+    color:#000000;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+  } 
+

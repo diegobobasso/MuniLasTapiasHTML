@@ -1,0 +1,71 @@
+
+  header {
+    background-color: rgb(40, 40, 40);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    justify-content: space-around;
+    padding: 2rem; 
+  }
+  
+  .funkologo {
+    grid-column: 1;
+  }
+  
+  nav {
+    grid-column: 2;
+  }
+  
+  .menu {
+    background-color:  rgb(40, 40, 40);
+    font-size: 1.2rem;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+  
+  .menu ul li {
+    display: inline-block;
+    width: 140px;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
+  .menu a:hover {
+    font-weight: bold;
+  }
+
+  .submenu {
+    position: relative;
+  }
+  
+  .submenu ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color:  rgb(40, 40, 40);;
+  }
+  
+  .submenu:hover ul {
+    display: block;
+  }
+  
+  .submenu ul li {
+    display: block;
+  }
+
+  .img-cart {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: -.5rem;
+  }
+  

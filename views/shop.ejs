@@ -1,0 +1,81 @@
+    <%-include('./partials/head')%>
+
+    <body>
+
+
+        <%-include('./partials/header')%>
+
+
+        <main class='shop'>
+           
+                <form class='izquierda ancho-tarj form-shop' action='/shop/' method='post' >
+                    
+                        <div><label>BUSCAR</label></div>
+                        <input type='search' class='ancho-cuad' id='clave' type='text' name='clave' placeholder='nombre o licencia' >
+                        <button type='submit' hidden></button>
+                    <div>
+                        <div><label for='orden'>ORDENAR POR</label></div>
+                        <select class='ancho-cuad' id='orden' name='orden'>
+                            <option value=''></option>
+                            <option value='A-Z'>A-Z</option>
+                            <option value='Z-A'>Z-A</option>
+                            <option value='mayor'>Por Mayor</option>
+                            <option value='menor'>Por Menor</option>
+                        </select>
+                    </div>
+                    <div> 
+                        <p>PRECIO</p>
+                        <div >
+                            <label class='' for='precio_min'>MIN</label>
+                            <input  class='inp-precio' id='precio_min' name='precio_min' type='text' size='5' placeholder='0' value='0' >
+                            <span  class=''>-</span>
+                            <label  class='' for='precio_max'>MAX</label> 
+                            <input  class='inp-precio' id='precio_max' name='precio_max' type='text' size='5' placeholder='0' value='0' >
+                        </div>
+                    </div>
+                    <div >
+                        <p class='pad'>FILTRAR</p>
+                        <div class='pad'><label for='nuevos'><input type='checkbox' id='nuevos' name='nuevos' > NUEVOS</label></div>
+                        <div class='pad'><label for='ofertas'><input type='checkbox' id='ofertas' name='ofertas' > OFERTAS </label></div>
+                        <div class='pad'><label for='especial'><input type='checkbox' id='especial' name='especial' > EDICIÓN ESPECIAL</label></div>
+                        <div class='pad'><label for='favoritos'><input type='checkbox' id='favoritos' name='favoritos' > FAVORITOS</label></div>
+                    </div>
+                </form>
+            
+                <div class='derecha contenedor-articulos'>
+                    
+                    <%articulos.forEach(articulo=>{%>
+                        <article class='marg-top'>
+                        <a href='/shop/item/<%=articulo.product_id%>' class='sin-decoracion'>
+                            
+                                <div >
+                                    <div class='text-end'>
+                                        <span class='btn-tarj-rojo'>Nuevo</span>
+                                    </div>
+                                    <img class='ancho-tarj' onmouseout="this.src='/<%=articulo.img_front%>'" onmouseover="this.src='/<%=articulo.img_back%>'"
+                                        src='/<%=articulo.img_front%>' />
+                                    <div >
+                                        <p class='text-saga'><%=articulo.licence_name%></p>
+                                        <p class='text-modelo'><%=articulo.product_name%></p>
+                                        <p class='text-precio'><%=articulo.product_price%></p>
+                                        <% if (articulo.dues == 0) { %>
+                                            <p class='text-cuotas'>Contado efectivo</p>
+                                        <% } else { %>
+                                            <p class='text-cuotas'><%=articulo.dues%> cuotas sin interés</p>
+                                        <% } %>
+                                    </div>
+                                </div>
+                            
+                        </a>
+                        </article>
+                    <%}) %>
+                    
+    
+                </div>
+            
+        </main>
+    
+
+            <%-include('./partials/footer')%>
+    </body>
+</html>

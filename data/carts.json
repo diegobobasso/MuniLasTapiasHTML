@@ -1,0 +1,12 @@
+[
+  {
+    "cart_id": 1,
+    "email": "homero@gmail.com",
+    "productos": []
+  },
+  {
+    "cart_id": 2,
+    "email": "bart@gmail.com",
+    "productos": []
+  }
+]

@@ -1,0 +1,91 @@
+.btn-gris {
+    background-color: rgb(80, 65, 65);
+    font-size: 1.6rem;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    margin-top: -1rem;
+}
+
+.btn-blanco {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.btn-masmenos-chicos {
+    display: block;
+    border-style: none;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.btn-pagar {
+    background-color: rgb(233, 35, 28);
+    width: 100%;
+    color: #ffffff;
+    padding: .8rem 2rem;
+    font-size: 1.5rem;
+    border-style: none;
+}
+
+.btn-create-rojo {
+    background-color: rgb(233, 35, 28);
+    color: #ffffff;
+    width: 12rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    border-style: none;
+    margin-left: 2rem;
+}
+
+
+.btn-rojo-edit {
+    background-color: rgb(233, 35, 28);
+    color: #ffffff;
+    width: 12rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1rem;
+    border-style: none;
+    margin-left: 2rem;
+}
+
+.btn-blanco-grande {
+    text-decoration: none;
+    font-size: 20px;
+    background-color: white;
+    color: #000000;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+}
+
+.btn-rojo {
+    margin-left: 1rem;
+    background-color: rgb(228, 41, 41);
+    color: white;
+    font-size: 1.2rem;
+    padding: .4rem .7rem;
+    border-style: none;
+}
+
+.btn-rojo-login {
+    background-color: rgb(233, 35, 28);
+    color: #ffffff;
+    padding: .8rem 2rem;
+    font-size: .6rem;
+    border-style: none;
+}
+
+
+.btn-tarj-rojo {
+    background-color: red;
+    color: white;
+    padding: .4rem .7rem;
+}
+
+

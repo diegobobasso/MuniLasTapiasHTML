@@ -1,0 +1,13 @@
+
+.form-create {
+  width: 80%;
+  padding: 2rem 6rem;
+}
+
+
+.input-form-create {
+  font-size: large;
+  border-style: none;
+  border-bottom-style: groove;
+  border-bottom-color: orangered;
+}

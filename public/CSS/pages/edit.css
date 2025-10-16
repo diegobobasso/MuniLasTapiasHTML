@@ -1,0 +1,42 @@
+.form-edit {
+  width: 80%;
+  padding: 2rem 6rem;
+}
+
+.select {
+  width: 15rem;
+  border-style: groove;
+  border-radius: 5px;
+}
+
+.select-cuotas {
+  width: 18rem;
+  border-style: groove;
+  border-radius: 5px;
+}
+
+
+.input-form-edit {
+  font-size: large;
+  border-style: none;
+  border-bottom-style: groove;
+  border-bottom-color: orangered;
+}
+
+.contenedor-imagenes {
+  width: 20rem;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  gap: 1rem;
+}
+
+.lbl-form {
+  font-size: large;
+  border-style: none;
+  border-top-style: groove;
+  border-top-color: orangered;
+}
+
+.imagen-edit {
+  width: 10rem;
+}
