@@ -7,8 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Municipalidad de Las Tapias</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-      
         <link rel="stylesheet" href="css/style.css">
+
+        <!-- Carga el SDK de EmailJS -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     </head>
 
     <body>
@@ -82,7 +85,7 @@
                         un pequeños zoológico) además de su paisaje serrano, sus ríos y sus bosques.</p> 
                         
                     <p style="font-size: 0.9rem;">Las actividades nocturnas también son importantes 
-                        para la economía local, ya que existen en ésta numerosos bares, confiterías, etc.></p>
+                        para la economía local, ya que existen en ésta numerosos bares, confiterías, etc.</p>
                         
                 </div>
                    
@@ -109,7 +112,34 @@
                     <p style="font-size: 0.9rem;">Organiza: Turismo Las Tapias</p>
                     <p style="font-size: 0.9rem;">Municipalidad de Las Tapias</p>
                     <p style="font-size: 0.9rem;">¡Vení a vivir esta experiencia serrana con sabor, música y diversión!</p> 
-                    <p><a class="btn btn-md btntras m-3" href="#">Conocé más</a></p>
+                    <p><a class="btn btn-md btnblue m-3" href="#">Conocé más</a></p>
+                </div>
+                   
+            </div>
+ <div class="container-fluid row row-cols-2 m-0">
+                <div class="col-12 col-md-6 p-1">
+                   
+                    <video class="img-fluid d-block mx-auto" autoplay loop muted playsinline>
+                        <source src="videos/video rio 3.mp4" type="video/mp4">
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+
+                <div class="col-12 col-md-6 p-1">
+                    
+                    <h5>Disfruta de tus vacaciones en Las Tapias</h5>
+                    <p  style="font-size: 0.9rem;"> 
+                        Sumergirse en la naturaleza es volver a lo esencial. Este viaje te
+                         llevará entre ríos y paisajes de sierras imponentes, donde el tiempo 
+                         parece detenerse y el aire se llena de calma. Cada amanecer reflejado 
+                         en el agua y cada sendero entre los árboles te recordará la belleza 
+                         de lo simple. Las risas compartidas, los chapuzones espontáneos y los 
+                         silencios contemplativos serán parte de una experiencia que quedará 
+                         grabada en el alma. Aquí no hay prisa, solo el fluir del río y el 
+                         susurro del viento entre las cumbres. Un rincón del mundo donde el 
+                         cuerpo descansa y el espíritu se renueva. Bienvenidos a Las Tapias.
+                        </p> 
+                    <p><a class="btn btn-md btnblue m-3" href="#">Conocé más</a></p>
                 </div>
                    
             </div>
@@ -119,27 +149,26 @@
                 <h2><b>BUZON DE SUGERENCIAS</b></h2>
             </div>
         
-            <div class="container col-7">
-                <form class="container mb-3">
+            <div class="container col-7 p-5">
+                <form id="sugerencia-form">
                     <div class="row">
-                        <p>Deja tu <span class="punteado">sugerencia</span> para mejorar nuestro municipio y nos pondremos en contacto.</p>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                        <p>Deja tu sugerencia para mejorar nuestro municipio y nos pondremos en contacto.</p>
+                        <div class="col-md-6">
+                            <input type="text" name="nombre" class="form-control" placeholder="Tu nombre" required>
                         </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                        <div class="col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Tu email" required>
+                        </div>
+                        <div class="col-12">
+                            <textarea name="mensaje" class="form-control" rows="5" placeholder="Tu sugerencia" required></textarea>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <textarea class="form-control" placeholder="Sobre qué quieres hablar" rows="5" id="charlasobre" name="text"></textarea>
-                        </div>
-                    </div>
+                    
                     <span class="txtchico">Recuerda incluir los datos para tener en cuenta tu sugerencia</span>
                     <button class="w-100 btn btn-lg btngreen" type="submit">Enviar</button>
                 </form>
             </div>
-            
+        
         <footer>
             <nav class="navbar navbar-expand-lg bgazul rounded" aria-label="Thirteenth navbar example">
                 <div class="container-fluid">
@@ -175,5 +204,38 @@
                 </div>
             </nav>
         </footer>
+        
+        <script>
+           
+            document.getElementById('sugerencia-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const datos = {
+                    nombre: form.nombre.value,
+                    email: form.email.value,
+                    mensaje: form.mensaje.value
+                    };
+                
+                emailjs.init("rt5U45x1G4tHZDe8A");
+
+                // Enviar a tu casilla
+                emailjs.send("service_h2pah0g", "Plantilla_a_mi", datos)
+                .then(() => {
+                // Enviar al usuario
+                    return emailjs.send("service_h2pah0g", "confirmacion", datos);
+                    })
+                .then(() => {
+                    form.reset();
+                    window.location.href = "gracias.html"; // Redirige a la página de agradecimiento
+                    })
+                .catch(error => {
+                    console.error("Error al enviar:", error);
+                    alert("Hubo un error al enviar la sugerencia.");
+                });
+            });
+        </script>
     </body>
 </html>
+
+
